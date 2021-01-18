@@ -24,7 +24,9 @@ const defaultData = {
       avatarURL: config.origin + '/tyler.jpg'
     },
     {
-      name: process.env.FIRST_NAME
+      name: process.env.FIRST_NAME,
+      email: `${process.env.FIRST_NAME}@dummy.com`,
+      avatarURL: config.origin + '/dummy.jpg'
     }
   ]
 }
