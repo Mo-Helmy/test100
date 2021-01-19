@@ -51,6 +51,13 @@ class ListContacts extends Component {
             className='add-contact'
           >Add Contact</Link>
         </div>
+        {
+          showingContacts.length === 0 && (
+            <div className="greeting">
+              <h3 className="greeting-title" >Good Job On Deploying This Website!</h3>
+            </div>
+          )
+        }
 
         {showingContacts.length !== contacts.length && (
           <div className='showing-contacts'>
