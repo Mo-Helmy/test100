@@ -4,7 +4,7 @@ orbs:
   node: circleci/node@4.1.0
   # different jobs are calles later in the workflows sections
 jobs:
-  ci:
+  build:
     docker:
       # the base image can run most needed actions with orbs
       - image: "cimg/base:stable"
