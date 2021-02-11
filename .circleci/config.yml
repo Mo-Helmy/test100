@@ -4,7 +4,7 @@ orbs:
   node: circleci/node@4.1.0
   # different jobs are calles later in the workflows sections
 jobs:
-  build:
+  ci:
     docker:
       # the base image can run most needed actions with orbs
       - image: "cimg/base:stable"
@@ -13,6 +13,18 @@ jobs:
       - checkout
       # install dependencies in both apps
       - run:
-          name: hello
+          name: Front-End Install
           command: |
-            echo "hello-world"
+            npm run frontend:install
+      - run:
+          name: Back-End Install
+          command: |
+            npm run backend:install
+      - run:
+          name: Front-End Build
+          command: |
+            npm run frontend:build
+      - run:
+          name: Back-End Build
+          command: |
+            npm run backend:build
