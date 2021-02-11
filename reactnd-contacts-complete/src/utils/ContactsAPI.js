@@ -1,4 +1,4 @@
-const api = process.env.REACT_APP_CONTACTS_API_URL || 'http://localhost:5001'
+const api = process.env.REACT_APP_CONTACTS_API_URL || 'http://reactnd-env.eba-9werppqp.us-east-2.elasticbeanstalk.com'
 
 let token = localStorage.token
 
@@ -13,7 +13,7 @@ const headers = {
 export const getAll = () =>
   fetch(`${api}/contacts`, { headers })
     .then(res => res.json())
-    .then(data => data.contacts)
+    .then(data => data)
 
 export const remove = (contact) =>
   fetch(`${api}/contacts/${contact.id}`, { method: 'DELETE', headers })
