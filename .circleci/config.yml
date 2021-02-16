@@ -28,12 +28,11 @@ jobs:
     deploy:
       docker:
         - image: "cimg/base:stable"
-        steps: 
-          - node/install
-          # a step calling the aws/cli orb might be needed here
-          - checkout
-          - run:
-            name: Deploy App
-            command: |
-              # adding a command for deploying should go here
-      
+      steps:
+        - node/install
+        # a step calling the aws/cli orb might be needed here
+        - checkout
+        - run:
+          name: Deploy App
+          command: |
+            # adding a command for deploying should go here
