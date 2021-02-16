@@ -30,9 +30,17 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - node/install
-      # a step calling the aws/cli orb might be needed here
+      - aws-cli/setup
       - checkout
       - run:
           name: Deploy App
           command: |
             npm run deploy
+
+workflows:
+  udagram:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
