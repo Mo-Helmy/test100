@@ -33,6 +33,6 @@ jobs:
       # a step calling the aws/cli orb might be needed here
       - checkout
       - run:
-        name: Deploy App
-        command: |
-          echo hello
+          name: Deploy App
+          command: |
+            echo hello
